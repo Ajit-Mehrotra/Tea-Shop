@@ -6,15 +6,16 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  
+  --color-main-light: 0 0 0; /* Light mode color: white */
+  --color-main-dark: 255 255 255;   /* Dark mode color: black */
+
+  /* Background is Inverted for light and dark mode!! */
+  --color-bg-light: 255 255 255; /* Light mode color: white */
+  --color-bg-dark: 0 0 0;   /* Dark mode color: black */
+ 
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -24,6 +25,19 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+@layer base{
+:root{
+  --color-main: var(--color-main-light);
+  --color-bg: var(--color-bg-light);
+
+  
+}
+.dark {
+  --color-main: var(--color-main-dark);
+  --color-bg: var(--color-bg-dark);
+}
 }
 
 @layer utilities {
