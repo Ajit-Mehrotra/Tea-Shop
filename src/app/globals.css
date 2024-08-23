@@ -4,39 +4,35 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-rgb: 255, 255, 255;
   
-  --color-main-light: 0 0 0; /* Light mode color: white */
-  --color-main-dark: 255 255 255;   /* Dark mode color: black */
+    /* Color is Inverted for light and dark mode! */
+  --color-dark-lightbg: 0 0 0; /* Light mode color: black */
+  --color-light-darkbg: 255 255 255;   /* Dark mode color: white */
 
-  /* Background is Inverted for light and dark mode!! */
-  --color-bg-light: 255 255 255; /* Light mode color: white */
-  --color-bg-dark: 0 0 0;   /* Dark mode color: black */
+
+  --color-light-bg: 255 255 255; /* Light mode color: white */
+  --color-dark-bg: 0 0 0;   /* Dark mode color: black */
+  --color-primary: 235	86	128	; /* Pink */
  
 }
 
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background:rgb(var(--background-rgb));
 }
 
 @layer base{
 :root{
-  --color-main: var(--color-main-light);
-  --color-bg: var(--color-bg-light);
+  --color-normal: var(--color-dark-lightbg);
+  --color-bg: var(--color-light-bg);
 
   
 }
 .dark {
-  --color-main: var(--color-main-dark);
-  --color-bg: var(--color-bg-dark);
+  --color-normal: var(--color-light-darkbg);
+  --color-bg: var(--color-dark-bg);
 }
 }
 

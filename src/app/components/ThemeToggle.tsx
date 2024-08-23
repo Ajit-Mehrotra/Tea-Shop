@@ -28,7 +28,7 @@ const ThemeToggle: React.FC = () => {
     };
 
     return (
-        <button onClick={toggleTheme} className='text-main'>
+        <button onClick={toggleTheme} className='text-normal py-2 px-4'>
             Toggle to {theme === 'dark' ? 'Light' : 'Dark'} Mode
         </button>
     );

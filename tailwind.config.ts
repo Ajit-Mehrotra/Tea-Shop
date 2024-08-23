@@ -1,14 +1,13 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: 'selector',
+  darkMode: "selector",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -16,14 +15,14 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        primary:'#e11d48',
-        main:'rgb(var(--color-main) / <alpha-value>)', // Reference the CSS variable
-        bg:'rgb(var(--color-bg) / <alpha-value>)', // Reference the CSS variable
+        primary: "rgb(var(--color-primary))", // Reference the CSS variable
+        normal: "rgb(var(--color-normal) / <alpha-value>)", // Reference the CSS variable
+        bg: "rgb(var(--color-bg) / <alpha-value>)", // Reference the CSS variable
       },
     },
     variants: {
       extend: {
-        backgroundColor: ['dark'], // Enable bg-main to respond to dark mode
+        backgroundColor: ["dark"], // Enable bg-main to respond to dark mode
       },
     },
   },
